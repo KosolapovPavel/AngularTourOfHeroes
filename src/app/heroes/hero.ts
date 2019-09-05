@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
-})
+export interface Hero {
+  id: number;
+  name: string;
 
-export class Hero {
-    id: number;
-    name: string;
+  getTitle(): string
+}
+
+class CurrentHero implements Hero {
+  id: number;
+  name: string;
+
+  getTitle(): string {
+    return `Name: ${this.name}`
   }
+}
